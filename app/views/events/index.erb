@@ -1,0 +1,12 @@
+<h1>View all Upcoming Events</h1>
+
+<%= form_tag(events_path, method: :get) do %>
+  Location or Venue: <%= text_field_tag :place, params[:place] %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+
+<ul>
+  <% @events.each do |e| %>
+  <li> <%= link_to e.artist.name + " at " + e.venue, e%></li>
+  <% end %>
+</ul>

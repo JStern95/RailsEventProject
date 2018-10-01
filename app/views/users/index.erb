@@ -1,0 +1,7 @@
+<h1>View all Users</h1>
+
+<ul>
+  <% @users.each do |s| %>
+  <li> <%= link_to s.username, s%></li>
+  <% end %>
+</ul>

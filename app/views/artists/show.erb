@@ -1,0 +1,8 @@
+<h1> <%= @artist.name %> </h1>
+
+<b> <%= @artist.name %> is performing at: </b>
+<ul>
+<% @artist.events.each do |e| %>
+<li> <%= link_to  e.venue + " on " + e.date_display, e %> </li>
+<% end %>
+</ul>
