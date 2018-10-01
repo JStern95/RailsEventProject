@@ -4,9 +4,10 @@
 <b>Show Date:</b> <%= @event.date_display %><br>
 <b>Show Time:</b> <%= @event.time_display %><br>
 <br>
+
 <b>Fans attending this concert:</b>
 <ul>
 <% @event.tickets.all.map {|t| t.user}.each do |u| %>
-<li> <%= link_to u.username, u %> </li>
+  <li> <%= link_to u.username, u %> </li>
 <% end %>
 </ul>
