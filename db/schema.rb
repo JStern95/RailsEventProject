@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2018_10_01_141558) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.integer "record_label_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -22,6 +21,8 @@ ActiveRecord::Schema.define(version: 2018_10_01_141558) do
   create_table "events", force: :cascade do |t|
     t.string "location"
     t.string "venue"
+    t.date "show_date"
+    t.time "show_time"
     t.integer "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,7 +36,11 @@ ActiveRecord::Schema.define(version: 2018_10_01_141558) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
     t.string "username"
+    t.string "password"
+    t.string "email"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
