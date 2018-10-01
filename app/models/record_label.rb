@@ -1,0 +1,2 @@
+class RecordLabel < ApplicationRecord
+end
