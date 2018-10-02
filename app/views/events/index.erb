@@ -1,7 +1,7 @@
 <h1>View all Upcoming Events</h1>
 
 <%= form_tag(events_path, method: :get) do %>
-  Location or Venue: <%= text_field_tag :place, params[:place] %>
+  City or Venue: <%= text_field_tag :place, params[:place] %>
   <%= submit_tag "Search", name: nil %>
 <% end %>
 
