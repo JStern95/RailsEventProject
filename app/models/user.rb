@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :username, length: { minimum: 3 }
 
   validates :email, presence: true, uniqueness: true
+  validates_with EmailAddress::ActiveRecordValidator, field: :email
 
   validates :first_name, presence: true
   validates :last_name, presence: true

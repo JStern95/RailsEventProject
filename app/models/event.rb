@@ -3,6 +3,10 @@ class Event < ApplicationRecord
   has_many :tickets
   has_many :users, through: :tickets
   validates :venue, length: { minimum: 3 }
+  validates_date :show_date
+  validates_time :show_time
+  validates :show_date, timeliness: {on_or_after: Date.today, 
+    message: "Events can't happen in the past!"}
 
   def date_display
     date_array=self.show_date.to_s.split("-")
@@ -10,7 +14,8 @@ class Event < ApplicationRecord
   end
 
   def time_display
-    time_array=self.show_time.to_s.split(" ")
-    time_array[1]
+    # time_array=self.show_time.to_s.split(" ")
+    # time_array[1]
+    self.show_time.strftime("%I:%M %p")
   end
 end

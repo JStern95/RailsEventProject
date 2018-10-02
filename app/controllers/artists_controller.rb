@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
 
   def index
     if params[:artist]
-      @artists = Artist.all.select{|a| a.name == "#{params[:artist]}"}
+      @artists = Artist.all.select{|a| a.name.downcase.include?("#{params[:artist].downcase}")}
     else
       @artists = Artist.all
     end

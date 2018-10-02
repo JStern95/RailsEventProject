@@ -1,5 +1,6 @@
 <h1>  <%= @event.artist.name %> at  <%= @event.venue %> </h1>
 
+<b>Artist:</b> <%=link_to @event.artist.name, @event.artist %><br>
 <b>City: </b> <%= @event.city %><br>
 <b>Show Date:</b> <%= @event.date_display %><br>
 <b>Show Time:</b> <%= @event.time_display %><br>

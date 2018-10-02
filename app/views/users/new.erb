@@ -1,35 +1,3 @@
 <h1>Register your account</h1>
 
-<ul>
-  <% if flash[:errors] %>
-  <% flash[:errors].each do |msg| %>
-  <li> <%= msg %></li>
-    <% end %>
-  <% end %>
-</ul>
-
-<%= form_for @user do |f| %>
-  <%= f.label :first_name %><br>
-  <%= f.text_field :first_name %><br>
-
-  <%= f.label :last_name %><br>
-  <%= f.text_field :last_name %><br>
-
-  <%= f.label :username %><br>
-  <%= f.text_field :username %><br>
-
-  <%= f.label :email %><br>
-  <%= f.text_field :email %><br>
-
-  <%= f.label :city %><br>
-  <%= f.text_field :city %><br>
-
-  <%= f.label :password %><br>
-  <%= f.text_field :password%><br>
-
-  <%= f.label :password_confirmation%><br>
-  <%= f.text_field :password_confirmation%><br>
-
-
-  <%= f.submit %>
-<% end %>
+<%= render "form" %>

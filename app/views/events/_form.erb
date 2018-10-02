@@ -1,0 +1,29 @@
+
+<ul>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |msg|  %>
+  <li>  <%= msg %> </li>
+    <% end %>
+  <% end %>
+</ul>
+
+
+<%= form_for @event do |f|%>
+
+  <%= f.label :artist %><br>
+  <%= f.collection_select :artist_id, Artist.all, :id, :name %><br>
+
+  <%= f.label :city %><br>
+  <%= f.text_field :city %><br>
+
+  <%= f.label :venue %><br>
+  <%= f.text_field :venue%><br>
+
+  <%= f.label :show_time %><br>
+  <%= f.time_field :show_time %><br>
+
+  <%= f.label :show_date %><br>
+  <%= f.date_field :show_date %><br>
+
+<%= f.submit %>
+<% end %>
