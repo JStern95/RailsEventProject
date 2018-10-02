@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :events, except: [:delete]
+  resources :events, except: [:destroy]
   resources :artists, only: [:index, :show]
-  resources :users, except: [:index, :delete]
-  resources :tickets, only: [:new, :create]
+  resources :users, except: [:index, :destroy]
+  resources :tickets, only: [:new, :create, :destroy]
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
