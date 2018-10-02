@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
     before_action :find_artist, only: :show
+    skip_before_action :authorized, only: [:index, :show]
 
   def index
     if params[:artist]

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   before_action :find_event, except: [:index, :new, :create]
+  skip_before_action :authorized, only: [:index, :show]
 
   def index
     if params[:place]

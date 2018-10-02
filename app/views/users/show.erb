@@ -10,4 +10,9 @@
 <% end %>
 </ul>
 
-<%= link_to "View All Events", events_path %>
+<% if current_user.id == @user.id %>
+<%= button_to "Edit User", edit_user_path, method: :get  %>
+<%= button_to "Logout", logout_path, method: :delete, data: {confirm: "Are you sure you want to logout?"}  %>
+<% end %>
+<br>
+<%= link_to "View All Events", events_path %><br>
