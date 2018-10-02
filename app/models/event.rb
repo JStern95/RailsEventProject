@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   belongs_to :artist
   has_many :tickets
   has_many :users, through: :tickets
+  validates :venue, length: { minimum: 3 }
 
   def date_display
     date_array=self.show_date.to_s.split("-")

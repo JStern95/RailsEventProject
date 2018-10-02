@@ -5,6 +5,7 @@
     <% end %>
   <% end %>
 </ul>
+
 <%= form_for @user do |f| %>
   <%= f.label :first_name %><br>
   <%= f.text_field :first_name %><br>
@@ -23,5 +24,10 @@
 
   <%= f.label :password %><br>
   <%= f.text_field :password%><br>
+
+  <%= f.label :password_confirmation%><br>
+  <%= f.text_field :password_confirmation%><br>
+
+
   <%= f.submit %>
 <% end %>

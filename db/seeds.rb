@@ -19,9 +19,9 @@ Ticket.destroy_all
 puts "Creating Test App"
 Artist.create(name: "Pearl Jam")
 puts "Created #{Artist.all.last.name}"
-Event.create(location: "New York City", venue: "MSG",show_date:"2018/10/2", show_time: "21:00", artist_id: 1)
+Event.create(city: "New York City", venue: "MSG",show_date:"2018/10/2", show_time: "21:00", artist_id: 1)
 puts "Created #{Event.all.last.venue}"
-User.create(first_name:"Evans", last_name:"Wang",  username:"EventLover", password:"flatiron",email:"Evans.wang@flatironshool.com",  location: "New York City")
+User.create(first_name:"Evans", last_name:"Wang",  username:"EventLover", password: 'flatiron', password_confirmation: 'flatiron',email:"Evans.wang@flatironshool.com",  city: "New York City")
 puts "Created #{User.all.last.username}"
 Ticket.create(user_id: 1, event_id: 1)
 puts "Created #{Ticket.all.last}"
@@ -29,9 +29,9 @@ puts "done 1st batch"
 puts "Creating 2nd Test App"
 Artist.create(name: "Taylor Swift")
 puts "Created #{Artist.all.last.name}"
-Event.create(location: "Boston", venue: "Boston Hall",show_date:"2018/11/2", show_time: "21:00", artist_id: 2)
+Event.create(city: "Boston", venue: "Boston Hall",show_date:"2018/11/2", show_time: "21:00", artist_id: 2)
 puts "Created #{Event.all.last.venue}"
-User.create(first_name:"Sean", last_name:"Para",  username:"TSwiftLover", password:"flatiron",email:"Sean.para@flatironshool.com",  location: "New York City")
+User.create(first_name:"Sean", last_name:"Para",  username:"TSwiftLover", password: 'flatiron', password_confirmation: 'flatiron',email:"Sean.para@flatironshool.com",  city: "New York City")
 puts "Created #{User.all.last.username}"
 Ticket.create(user_id: 2, event_id: 2)
 puts "Created #{Ticket.all.last}"

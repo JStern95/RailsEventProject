@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_141558) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "location"
+    t.string "city"
     t.string "venue"
     t.date "show_date"
     t.time "show_time"
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 2018_10_01_141558) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "email"
-    t.string "location"
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
