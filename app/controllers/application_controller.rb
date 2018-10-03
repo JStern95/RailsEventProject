@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user #i can call current_user from a view
 
   def current_user
-    User.find_by({ id: session[:user_id] })
+    User.find_by({ id: session[:user_id] }) || Artist.find_by({ id: session[:artist_id] })
   end
 
   def logged_in?
