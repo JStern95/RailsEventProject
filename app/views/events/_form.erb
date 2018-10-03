@@ -10,9 +10,6 @@
 
 <%= form_for @event do |f|%>
 
-  <%= f.label :artist %><br>
-  <%= f.collection_select :artist_id, Artist.all, :id, :name %><br>
-
   <%= f.label :city %><br>
   <%= f.text_field :city %><br>
 

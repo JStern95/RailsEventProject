@@ -25,3 +25,7 @@
     <%= submit_tag "Get Ticket"%>
   <% end %>
 <% end %>
+
+<% if !!current_user && current_user.class == Artist %>
+  <%= button_to "Edit Event", edit_event_path, method: :get %>
+<% end %>

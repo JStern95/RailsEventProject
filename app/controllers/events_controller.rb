@@ -21,7 +21,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create(event_params)
+    @event = Event.new(event_params)
+    @event.artist_id = current_user.id
+    @event.save
     if @event.valid?
       redirect_to @event
     else

@@ -7,19 +7,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css" />
   </head>
 
   <body>
-    <div class="menu">
-    <%= button_to "View All Events", events_path, method: :get %>
-    <%= button_to "View All Artists", artists_path, method: :get %>
+    <div class="ui inverted segment">
+      <div class="ui inverted secondary menu">
+          <%= link_to "View All Events", events_path, class: :item %>
+          <%= link_to "View All Artists", artists_path, class: :item %>
     <% if !!current_user %>
-        <%= button_to "Home", current_user, method: :get %>
-        <%= button_to "Logout", logout_path, method: :delete, data: {confirm: "Are you sure you want to logout?"}  %>
+        <%= link_to "Home", current_user, class: :item%>
+        <%= link_to "Logout", logout_path, class: :item, method: :delete, data: {confirm: "Are you sure you want to logout?"}  %>
+
        <% else %>
-        <%=button_to "Login", login_path, method: :get  %>
+        <%=link_to "Login", login_path, class: :item  %>
        <% end %>
     </div>
+  </div>
     <%= yield %>
   </body>
 </html>
