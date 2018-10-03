@@ -5,7 +5,12 @@
 <% end %>
 
 <b>Name:</b> <%= @user.first_name %> <%= @user.last_name %> <br>
-<b>City:</b> <%= @user.city %><br><br>
+<b>City:</b> <%= @user.city %><br>
+<% if current_user.id == @user.id %>
+  <%= button_to "Edit User", edit_user_path, method: :get  %>
+  <br>
+<% end %>
+
 
 <b> <%= @user.username %> has tickets to see: </b>
   <ol>
@@ -13,8 +18,3 @@
   <li> <%= link_to e.artist.name  + " at " +  e.venue, e %> on <%= e.date_display %></li>
   <% end %>
 </ol>
-
-<% if current_user.id == @user.id %>
-  <%= button_to "Edit User", edit_user_path, method: :get  %>
-  <br>
-<% end %>

@@ -8,7 +8,7 @@ class EventsController < ApplicationController
       #@events = Event.all.select{|e| e.city.downcase == "#{params[:place].downcase}" || e.venue.downcase == "#{params[:place].downcase}" }
       @events = Event.all.select{|e| e.city.downcase.include?("#{params[:place].downcase}") || e.venue.downcase.include?("#{params[:place].downcase}") }
     else
-      @events = Event.all
+      @events = Event.all.sort_by{|e| e.date_display}
     end
   end
 
