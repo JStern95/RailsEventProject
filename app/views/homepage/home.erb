@@ -1,44 +1,29 @@
 <h1>Welcome!</h1>
 
-<div class="login">
 <h4><%= flash[:notice] %></h4>
 
-<%= form_tag(login_path) do %>
-  <%= label_tag :username %> <br>
-  <%= text_field_tag :username %> <br>
 
-  <%= label_tag :password %> <br>
-  <%= password_field_tag :password %> <br>
-  <br>
-</div>
-<div class="login">
-  <%= submit_tag 'Login' %>
-</div>
-<% end %>
-<div class="login">
-  Don't have an account? Create one <%= link_to "here", new_user_path %>!
-</div>
-
-
-<div class="ui inverted segment">
-  <div class="ui inverted form">
-    <div class="two fields">
-      <div class="field">
+<div class="form-container">
+  <div class="login">
+    <div>
       <%= form_tag(login_path) do %>
         <%= label_tag :username %> <br>
         <%= text_field_tag :username %> <br>
-      </div>
-      <div class="field">
         <%= label_tag :password %> <br>
         <%= password_field_tag :password %> <br>
-      </div>
+        <br>
+        <center> <%= submit_tag 'Login' %></center>
+            <% end %>
+      <br>
+    <!-- </div> -->
+    <!-- <div class="login"> -->
+
+
     </div>
-    <div class="inline field">
-      <div class="ui checkbox">
-        <input type="checkbox" tabindex="0" class="hidden">
-      </div>
-    </div>
-    <div class="ui submit button">Submit</div>
+    <!-- </div> -->
+    <!-- <div class="login"> -->
+      <div>
+        <b>Don't have an account? Create one <span style="margin-left: 2px"><%= link_to " here", new_user_path %></span> !</b>
+     </div>
   </div>
 </div>
-<% end %>
