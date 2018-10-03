@@ -1,5 +1,9 @@
 <h1> <%= @artist.name %> </h1>
 
+<% if flash[:new_error] %>
+<h2> <%= flash[:new_error] %></h2><br>
+<% end %>
+
 <b> <%= @artist.name %> is performing at: </b>
 <ul>
 <% @artist.events.each do |e| %>

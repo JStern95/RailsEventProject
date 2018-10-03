@@ -17,7 +17,12 @@ class EventsController < ApplicationController
   end
 
   def new
+    if !!current_user && current_user.class == User
+      flash[:new_error] = "You do not have access to that area"
+      redirect_to user_path(current_user.id)
+    else
     @event = Event.new
+    end
   end
 
   def create
@@ -33,6 +38,10 @@ class EventsController < ApplicationController
   end
 
   def edit
+    if !!current_user && current_user.class == User
+      flash[:new_error] = "You do not have access to that area"
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def update

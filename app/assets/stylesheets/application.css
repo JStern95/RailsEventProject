@@ -50,7 +50,7 @@ body::after {
     justify-content: center;
 }
 
-.login {
+.form {
   align-content: center;
   flex-direction: row;
   display: flex;
