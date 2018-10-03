@@ -35,8 +35,7 @@ class UsersController < ApplicationController
 
   def edit
     if !!current_user && current_user.class == User
-      flash[:new_error] = "You're already logged in!"
-      redirect_to user_path(current_user.id)
+      render :edit
     elsif !!current_user && current_user.class == Artist
       flash[:new_error] = "You do not have access to that area"
       redirect_to artist_path(current_user.id)

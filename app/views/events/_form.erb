@@ -7,7 +7,9 @@
   <% end %>
 </ul>
 
-
+<div class="form-container">
+  <div class="form">
+    <div>
 <%= form_for @event do |f|%>
 
   <%= f.label :city %><br>
@@ -21,6 +23,10 @@
 
   <%= f.label :show_date %><br>
   <%= f.date_field :show_date %><br>
+  <br>
 
-<%= f.submit %>
+<center> <%= f.submit %></center>
+</div>
+</div>
+</div>
 <% end %>

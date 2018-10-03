@@ -1,6 +1,9 @@
 <h1>User Login</h1>
 
 <h4><%= flash[:notice] %></h4>
+<div class="form-container">
+  <div class="form">
+    <div>
 
 <%= form_tag(login_path) do %>
   <%= label_tag :username %> <br>
@@ -8,8 +11,13 @@
 
   <%= label_tag :password %> <br>
   <%= password_field_tag :password %> <br>
-
-  <%= submit_tag 'Login' %>
+<br>
+  <center> <%= submit_tag 'Login' %></center>
 <% end %>
 <br>
-Don't have an account? Create one <%= link_to "here", new_user_path %>!
+    </div>
+<div>
+<b> Don't have an account? Create one <%= link_to "here", new_user_path %>!</b>
+</div>
+</div>
+</div>

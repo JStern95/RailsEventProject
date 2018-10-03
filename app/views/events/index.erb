@@ -1,9 +1,10 @@
 <h1>View all Upcoming Events</h1>
-
+<div class="ui action input">
 <%= form_tag(events_path, method: :get) do %>
-  City or Venue: <%= text_field_tag :place, params[:place] %>
+<%= text_field_tag :place, params[:place], placeholder: "City or Venue" %>
   <%= submit_tag "Search", name: nil %>
 <% end %>
+</div>
 
 <ul>
   <% @events.each do |e| %>

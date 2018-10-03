@@ -1,10 +1,10 @@
 <h1>View all Artists</h1>
-
+<div class="ui action input">
 <%= form_tag(artists_path, method: :get) do %>
-  Artist: <%= text_field_tag :artist, params[:artist] %>
+  <%= text_field_tag :artist, params[:artist], placeholder:"Artist Name" %>
   <%= submit_tag "Search", name: nil %>
 <% end %>
-
+</div>
 <ul>
   <% @artists.each do |a| %>
   <li> <%= link_to a.name, a%></li>

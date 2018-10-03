@@ -1,4 +1,4 @@
-<h1>Editing : <%= @artist.name %> </h1>
+<h1>Editing :<%= @artist.name %> </h1>
 
 <ul>
   <% if flash[:errors] %>
@@ -7,24 +7,29 @@
     <% end %>
   <% end %>
 </ul>
+  <div class="form-container">
+    <div class="form">
+      <div>
+  <%= form_for @artist do |f| %>
 
-<%= form_for @artist do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
 
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %><br>
 
-  <%= f.label :username %><br>
-  <%= f.text_field :username %><br>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %><br>
 
-  <%= f.label :email %><br>
-  <%= f.text_field :email %><br>
+    <%= f.label :password %><br>
+    <%= f.password_field :password%><br>
 
-  <%= f.label :password %><br>
-  <%= f.password_field :password%><br>
+    <%= f.label :password_confirmation%><br>
+    <%= f.password_field :password_confirmation%><br>
+<br>
 
-  <%= f.label :password_confirmation%><br>
-  <%= f.password_field :password_confirmation%><br>
-
-
-  <%= f.submit %>
-<% end %>
+    <center> <%= f.submit %></center>
+  </div>
+  </div>
+  </div>
+    <% end %>
