@@ -17,21 +17,21 @@ User.destroy_all
 Ticket.destroy_all
 
 puts "Creating Test App"
-Artist.create(name: "Pearl Jam")
+Artist.create(name: "Pearl Jam", username: "PJam", password: "password", password_confirmation: "password", email: "Pearljam@pearljam.com" )
 puts "Created #{Artist.all.last.name}"
-Event.create(city: "New York City", venue: "MSG",show_date:"2018/10/2", show_time: "21:00", artist_id: 1)
+Event.create(city: "New York City", venue: "Madison Square Garden" , show_date:"2018/10/3", show_time: "21:00", artist_id: 1)
 puts "Created #{Event.all.last.venue}"
-User.create(first_name:"Evans", last_name:"Wang",  username:"EventLover", password: 'flatiron', password_confirmation: 'flatiron',email:"Evans.wang@flatironshool.com",  city: "New York City")
+User.create(first_name:"Evans", last_name:"Wang",  username: "EventLover", password: 'flatiron', email:"Evans.wang@gmail.com",  city: "New York City")
 puts "Created #{User.all.last.username}"
 Ticket.create(user_id: 1, event_id: 1)
 puts "Created #{Ticket.all.last}"
 puts "done 1st batch"
 puts "Creating 2nd Test App"
-Artist.create(name: "Taylor Swift")
+Artist.create(name: "Taylor Swift", username: "TaySwift", password: "password", password_confirmation: "password", email: "Taytay@pearljam.com" )
 puts "Created #{Artist.all.last.name}"
 Event.create(city: "Boston", venue: "Boston Hall",show_date:"2018/11/2", show_time: "21:00", artist_id: 2)
 puts "Created #{Event.all.last.venue}"
-User.create(first_name:"Sean", last_name:"Para",  username:"TSwiftLover", password: 'flatiron', password_confirmation: 'flatiron',email:"Sean.para@flatironshool.com",  city: "New York City")
+User.create(first_name:"Sean", last_name:"Para",  username:"TSwiftLover", password: 'flatiron', password_confirmation: 'flatiron',email:"Sean.para@gmail.com",  city: "New York City")
 puts "Created #{User.all.last.username}"
 Ticket.create(user_id: 2, event_id: 2)
 puts "Created #{Ticket.all.last}"

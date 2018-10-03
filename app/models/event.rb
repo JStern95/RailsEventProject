@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   validates :venue, length: { minimum: 3 }
   validates_date :show_date
   validates_time :show_time
-  validates :show_date, timeliness: {on_or_after: Date.today, 
+  validates :show_date, timeliness: {on_or_after: Date.today,
     message: "Events can't happen in the past!"}
 
   def date_display
