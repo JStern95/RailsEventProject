@@ -13,7 +13,7 @@
 <% end %>
 </ul>
 
-<% if @event.date_display > Date.today.to_s %>
+<% if @event.show_date > Date.today %>
   <% if !!current_user && current_user.class == User %>
     <% if current_user.tickets.find_by(event_id: @event.id) %>
     Can't make it anymore?

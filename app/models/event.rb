@@ -17,6 +17,6 @@ class Event < ApplicationRecord
   def time_display
     # time_array=self.show_time.to_s.split(" ")
     # time_array[1]
-    self.show_time.strftime("%I:%M %p")
+    @time = self.show_time.strftime("%I:%M %p")
   end
 end

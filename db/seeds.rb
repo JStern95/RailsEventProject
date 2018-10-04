@@ -111,10 +111,10 @@ puts "Created #{Event.all.last.venue}"
 Event.create(city: "Philadelphia", venue: "Wells Fargo Center", show_date: "2018/12/17", show_time: "19:30", artist_id: 6)
 puts "Created #{Event.all.last.venue}"
 
-Event.create(city: "Philadelphia", venue: "Wells Fargo Center", show_date: "2018/11/08", show_time: "20:00", artist_id: 7)
+Event.create(city: "Philadelphia", venue: "Wells Fargo Center", show_date: "2019/11/08", show_time: "20:00", artist_id: 7)
 puts "Created #{Event.all.last.venue}"
 
-Event.create(city: "Philadelphia", venue: "Wells Fargo Center", show_date: "2018/11/09", show_time: "20:00", artist_id: 7)
+Event.create(city: "Philadelphia", venue: "Wells Fargo Center", show_date: "2019/11/09", show_time: "20:00", artist_id: 7)
 puts "Created #{Event.all.last.venue}"
 
 Event.create(city: "Philadelphia", venue: "Union Transfer", show_date: "2018/10/23", show_time: "20:30", artist_id: 10)

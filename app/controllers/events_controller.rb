@@ -59,6 +59,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    @event.tickets.destroy_all
+    @event.destroy
+    redirect_to artist_path(current_user.id)
+  end
+
 private
 
   def find_event

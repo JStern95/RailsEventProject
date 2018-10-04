@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :events, except: [:destroy]
+  resources :events
   resources :artists, only: [:index, :show, :edit, :update]
   resources :users, except: [:index, :destroy]
   resources :tickets, only: [:new, :create, :destroy]
