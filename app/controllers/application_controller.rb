@@ -20,4 +20,12 @@ class ApplicationController < ActionController::Base
   def cities
     @cities = [["New York City"], ["Boston"], ["Philadelphia"]]
   end
+
+  def past_events
+    @past_events = Event.all.select{|e| e.date_display < Date.today.to_s}
+  end
+
+  def upcoming_events
+    @upcoming_events = Event.all.select{|e| e.date_display > Date.today.to_s}
+  end
 end

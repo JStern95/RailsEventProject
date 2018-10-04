@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    upcoming_events
+    past_events
   end
 
   def new

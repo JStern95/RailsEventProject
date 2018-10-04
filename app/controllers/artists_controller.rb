@@ -11,6 +11,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    upcoming_events
   end
 
   def edit

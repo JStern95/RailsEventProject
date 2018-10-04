@@ -151,3 +151,50 @@ img {
   font-size: 2rem;
 }
 /* End of Artist Index */
+
+/* Artist Show Page */
+
+.page-container {
+  padding: 20px;
+  margin: 20px;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+img {
+  max-width: 250px;
+  max-height: 200px;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.h1-show{
+  color:black;
+  font-size:600%;
+  text-shadow: 5px 5px rgba(223, 216, 146, 1);
+  text-align: center;
+}
+
+.img-show{
+  min-width: 500px;
+  min-height: 500px;
+  align-items: center;
+}
+
+.h2-event-show {
+  font-size: 30px;
+}
+
+.event-list {
+  font-size: 20px;
+}
+
+.event-show {
+  padding-right: 10%;
+}
+
+/* End artist show page */
