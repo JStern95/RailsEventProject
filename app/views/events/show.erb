@@ -1,34 +1,53 @@
 <h1>  <%= @event.artist.name %> at  <%= @event.venue.name %> </h1>
 
-<b>Artist:</b> <%=link_to @event.artist.name, @event.artist %><br>
-<b>City: </b> <%= @event.city %><br>
-<b>Show Date:</b> <%= @event.date_display %><br>
-<b>Show Time:</b> <%= @event.time_display %><br>
-<br>
+<div class="event-show-page-container">
+  <div class="top-row-container">
 
-<b>Fans attending this concert:</b>
-<ul>
-<% @event.tickets.all.map {|t| t.user}.each do |u| %>
-  <li> <%= link_to u.username, u %> </li>
-<% end %>
-</ul>
+  <div class="show-page-box"><img src=<%= @event.artist.image %>></div>
+  <div class="show-page-box"><img src=<%= @event.venue.image %>></div>
+</div>
+<div class="second-row-container">
 
-<% if @event.show_date > Date.today %>
+  <br>
+  <div class="show-page-box">
+  <h2>Concert Infomation:</h2>
+  <b>Artist:</b> <%=link_to @event.artist.name, @event.artist %><br>
+  <b>City: </b> <%= @event.city %><br>
+  <b>Show Date:</b> <%= @event.date_display %><br>
+  <b>Show Time:</b> <%= @event.time_display %><br>
+  <br>
+  <% if @event.show_date > Date.today %>
   <% if !!current_user && current_user.class == User %>
-    <% if current_user.tickets.find_by(event_id: @event.id) %>
-    Can't make it anymore?
-      <%= button_to "Delete Ticket", current_user.tickets.find_by(event_id: @event.id), method: :delete  %>
-    <% else %>
-    Want to go to this concert?
-      <%= form_tag ('/tickets')%>
-      <%= hidden_field(:user_id, current_user.id) %>
-      <%= hidden_field(:event_id, @event.id) %>
-      <%= submit_tag "Get Ticket"%>
-    <% end %>
+  <% if current_user.tickets.find_by(event_id: @event.id) %>
+  Can't make it anymore?
+  <%= button_to "Delete Ticket", current_user.tickets.find_by(event_id: @event.id), method: :delete  %>
+  <% else %>
+  Want to go to this concert?
+  <%= form_tag ('/tickets')%>
+  <%= hidden_field(:user_id, current_user.id) %>
+  <%= hidden_field(:event_id, @event.id) %>
+  <%= submit_tag "Get Ticket"%>
   <% end %>
-<% end %>
+  <% end %>
+  <% end %>
+  </div>
+  <div class="show-page-box"style="padding-left: 220px;">
+<center>
+    <h2>Fans attending this concert:</h2>
+    <ul>
+    <% @event.tickets.all.map {|t| t.user}.each do |u| %>
+      <li class="event-show-going-list"> <%= link_to u.username, u %> </li>
+    <% end %>
+    </ul>
+  </center>
+  </div>
+  <div class="event-edit-destroy">
 
-<% if !!current_user && current_user.class == Artist && current_user.id == @event.artist.id %>
-  <%= button_to "Edit Event", edit_event_path, method: :get %>
-  <%= button_to "Delete Event", @event, method: :delete, data: {confirm: "Are you sure"} %>
-<% end %>
+    <% if !!current_user && current_user.class == Artist && current_user.id == @event.artist.id %>
+      <%= button_to "Edit Event", edit_event_path, method: :get %>
+      <%= button_to "Delete Event", @event, method: :delete, data: {confirm: "Are you sure"} %>
+    <% end %>
+
+  </div>
+</div>
+</div>

@@ -183,6 +183,7 @@ img {
   min-width: 500px;
   min-height: 500px;
   align-items: center;
+  border-radius: 50px;
 }
 
 .h2-event-show {
@@ -215,6 +216,7 @@ color: rgba(223, 216, 146, 1);
 .event-index-image {
 float: left;
 margin: 0 15px 0 0;
+border-radius: 50px;
 }
 
 li p {
@@ -271,3 +273,49 @@ cursor: pointer;
 }
 
 /* end of users show */
+/* Events Show Page */
+
+.event-show-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-row-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.second-row-container {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgba(0,0,0,.2)
+}
+
+.show-page-box {
+  min-width: 350px;
+  min-height: 350px;
+  border-radius: 50px;
+}
+
+.show-page-box img {
+  min-width: 350px;
+  min-height: 350px;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.event-show-going-list {
+  margin-top: -10px;
+  margin-left: -250px;
+  font-size: 20px;
+  background: none
+}
+
+.event-show-going-list:hover {
+  background: none
+}
