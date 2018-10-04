@@ -12,7 +12,7 @@
   <h2 class="h2-event-show"><b> <%= @artist.name %> is performing at: </b></h2>
     <ul>
     <% @artist.events.sort_by{|e| e.date_display}.each do |e| %>
-    <div class="event-list"> <%= link_to  e.venue + " on " + e.date_display, e %> </div>
+    <div class="event-list"> <%= link_to  e.venue.name + " on " + e.date_display, e %> </div>
     <% end %>
     </ul>
   </div>

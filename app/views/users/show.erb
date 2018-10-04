@@ -17,11 +17,28 @@
 
     <p class="tic-to-see"> <%= @user.username %> has tickets to see: </b> </p>
       <ol>
-      <% @user.tickets.all.map {|t| t.event}.each do |e| %>
+      <% @user.tickets.all.select {|t| t.event.show_date > Date.today}.each do |e| %>
       <a class="event-container" href=<%= event_path(e) %>>
-      <li class="user-show-events"> <%= e.artist.name  + " at " +  e.venue %> on <%= e.date_display %></li>
+
+      <li class="user-show-events"> <%= e.event.artist.name  + " at " +  e.event.venue.name %> on <%= e.event.date_display %></li>
       <% end %>
     </ol>
+  </a>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p class="tic-to-see"> <%= @user.username %> has seen: </b> </p>
+      <ol>
+      <% @user.tickets.all.select {|t| t.event.show_date < Date.today}.each do |e| %>
+      <a class="event-container" href=<%= event_path(e) %>
+
+      <li class="user-show-events"> <%= e.event.artist.name  + " at " +  e.event.venue.name %> on <%= e.event.date_display %></li>
+      <% end %>
+    </ol>
+
+
 
   </div>
 </div>

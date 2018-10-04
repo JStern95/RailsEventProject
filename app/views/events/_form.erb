@@ -16,7 +16,7 @@
   <%= f.select :city, @cities %><br>
 
   <%= f.label :venue %><br>
-  <%= f.text_field :venue%><br>
+  <%= f.collection_select :venue, Venue.all.sort_by{|v| v.name}, :id, :name%><br>
 
   <%= f.label :show_time %><br>
   <%= f.time_field :show_time %><br>
