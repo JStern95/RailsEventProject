@@ -1,17 +1,27 @@
 <h1> <%= @user.username %> </h1>
 
-<% if flash[:new_error] %>
-<h2> <%= flash[:new_error] %></h2><br>
-<% end %>
+<div class="page">
 
-<b>Name:</b> <%= @user.first_name %> <%= @user.last_name %> <br>
-<b>City:</b> <%= @user.city %><br>
+<div class="user-info">
 
-
-
-<b> <%= @user.username %> has tickets to see: </b>
-  <ol>
-  <% @user.tickets.all.map {|t| t.event}.each do |e| %>
-  <li> <%= link_to e.artist.name  + " at " +  e.venue, e %> on <%= e.date_display %></li>
+  <% if flash[:new_error] %>
+  <h2> <%= flash[:new_error] %></h2><br>
   <% end %>
-</ol>
+
+  <b>Name:</b> <%= @user.first_name %> <%= @user.last_name %> <br>
+  <b>City:</b> <%= @user.city %><br>
+</div>
+
+
+  <div class="user-shows">
+
+    <p class="tic-to-see"> <%= @user.username %> has tickets to see: </b> </p>
+      <ol>
+      <% @user.tickets.all.map {|t| t.event}.each do |e| %>
+      <a class="event-container" href=<%= event_path(e) %>>
+      <li class="user-show-events"> <%= e.artist.name  + " at " +  e.venue %> on <%= e.date_display %></li>
+      <% end %>
+    </ol>
+
+  </div>
+</div>

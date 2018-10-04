@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :artist
+  belongs_to :venue
   has_many :tickets
   has_many :users, through: :tickets
   validates :venue, length: { minimum: 3 }

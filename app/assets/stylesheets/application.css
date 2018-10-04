@@ -236,3 +236,38 @@ cursor: pointer;
 }
 
 /* End events index page */
+
+/* begin User show Page */
+
+.page {
+  width: 500px;
+  margin: auto;
+  align-items: center;
+  align-items: center;
+}
+
+.user-info {
+  text-align: left;
+
+}
+
+.user-shows {
+  margin: 20px;
+  text-align: center;
+}
+
+.user-show-events {
+  color: rgba(0, 0, 0, 1);
+}
+
+.user-show-events:hover {
+color: rgba(223, 216, 146, 1);
+background: rgba(0, 0, 0, 0.30);
+cursor: pointer;
+}
+
+.tic-to-see {
+
+}
+
+/* end of users show */
