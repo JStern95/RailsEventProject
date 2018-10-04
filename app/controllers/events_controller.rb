@@ -9,7 +9,7 @@ class EventsController < ApplicationController
       @events = upcoming_events.select{|e| e.city.downcase.include?("#{params[:place].downcase}") || e.venue.downcase.include?("#{params[:place].downcase}") }
 
     else
-      @events = upcoming_events.sort_by{|e| e.date_display}
+      @events = upcoming_events.sort_by{|e| e.show_date}
     end
   end
 

@@ -59,6 +59,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user.tickets.destroy_all
+    @user.destroy
+    redirect_to login_path
   end
 
 private

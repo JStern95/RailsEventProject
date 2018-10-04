@@ -198,3 +198,41 @@ img {
 }
 
 /* End artist show page */
+
+/* Events Index Page */
+
+
+.list-of-events {
+list-style-type: none;
+width: 650px;
+}
+
+h3 {
+font: bold 25px/1.5 Helvetica, Verdana, sans-serif;
+color: rgba(223, 216, 146, 1);
+}
+
+.event-index-image {
+float: left;
+margin: 0 15px 0 0;
+}
+
+li p {
+font-size: 20px;
+color: black;
+}
+
+li {
+padding: 10px;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.30);
+margin: 15px;
+width: 100%;
+}
+
+li:hover {
+background: #eee;
+cursor: pointer;
+}
+
+/* End events index page */

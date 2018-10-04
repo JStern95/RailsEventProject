@@ -1,13 +1,20 @@
-<h1>View all Upcoming Events</h1>
-<div class="ui action input">
-<%= form_tag(events_path, method: :get) do %>
-<%= text_field_tag :place, params[:place], placeholder: "City or Venue" %>
-  <%= submit_tag "Search", name: nil %>
-<% end %>
-</div>
+<h1>Upcoming Events</h1>
+<center>
+    <div class="ui action input">
+    <%= form_tag(events_path, method: :get) do %>
+    <%= text_field_tag :place, params[:place], placeholder: "City or Venue" %>
+      <%= submit_tag "Search", name: nil %>
+    <% end %>
+  </div>
 
-<ul>
-  <% @events.each do |e| %>
-  <li> <%= link_to e.artist.name + " at " + e.venue, e%></li>
-  <% end %>
-</ul>
+  <ul class="list-of-events">
+    <% @events.each do |e| %>
+    <li>
+      <a class="event-container" href=<%= event_path(e) %>>
+      <img class="event-index-image" src=<%= e.artist.image %>>
+      <h3><%= e.artist.name + " at " + e.venue%></h3>
+      <p>Show Date: <%= e.date_display %></p>
+    </li></a>
+    <% end %>
+  </ul>
+</center>
