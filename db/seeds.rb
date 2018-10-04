@@ -17,22 +17,32 @@ User.destroy_all
 Ticket.destroy_all
 
 puts "Creating Test App"
-Artist.create(name: "Pearl Jam", username: "PJam", password: "password", password_confirmation: "password", email: "Pearljam@pearljam.com" )
+Artist.create(name: "Christina Aguilera", username: "ChristinaAguilera", password: "password", email: "Pearljam@pearljam.com", image: "https://pbs.twimg.com/profile_images/1007471233582022656/_PCnUad5_400x400.jpg" )
 puts "Created #{Artist.all.last.name}"
-Event.create(city: "New York City", venue: "Madison Square Garden" , show_date:"2018/10/3", show_time: "21:00", artist_id: 1)
-puts "Created #{Event.all.last.venue}"
-User.create(first_name:"Evans", last_name:"Wang",  username: "EventLover", password: 'flatiron', email:"Evans.wang@gmail.com",  city: "New York City")
-puts "Created #{User.all.last.username}"
-Ticket.create(user_id: 1, event_id: 1)
-puts "Created #{Ticket.all.last}"
-puts "done 1st batch"
-puts "Creating 2nd Test App"
-Artist.create(name: "Taylor Swift", username: "TaySwift", password: "password", password_confirmation: "password", email: "Taytay@pearljam.com" )
+
+Artist.create(name: "Bruno Mars", username: "BrunoMars", password: "password", email: "BrunoMars@pearljam.com", image: "https://i.scdn.co/image/aa32d6d4ca2467974403518dd3ebfe8831c5ced1" )
 puts "Created #{Artist.all.last.name}"
-Event.create(city: "Boston", venue: "Boston Hall",show_date:"2018/11/2", show_time: "21:00", artist_id: 2)
-puts "Created #{Event.all.last.venue}"
-User.create(first_name:"Sean", last_name:"Para",  username:"TSwiftLover", password: 'flatiron', password_confirmation: 'flatiron',email:"Sean.para@gmail.com",  city: "New York City")
-puts "Created #{User.all.last.username}"
-Ticket.create(user_id: 2, event_id: 2)
-puts "Created #{Ticket.all.last}"
-puts "done 2nd batch"
+
+Artist.create(name: "Florence and the Machine", username: "FlorenceMachine", password: "password", email: "FlorenceMachine@pearljam.com", image: "https://images-na.ssl-images-amazon.com/images/I/C17HLImbaES._SL1000_.png" )
+puts "Created #{Artist.all.last.name}"
+
+Artist.create(name: "Maroon 5", username: "Maroon5", password: "password", email: "Maroon5@pearljam.com", image: "https://www.teksteshqip.com/img_upz/allart_full/70253.jpg" )
+puts "Created #{Artist.all.last.name}"
+
+Artist.create(name: "Daughtry", username: "Daughtry", password: "password", email: "Daughtry@pearljam.com", image: "https://pbs.twimg.com/profile_images/985969700093022209/oW_Yg9H3_400x400.jpg" )
+puts "Created #{Artist.all.last.name}"
+
+Artist.create(name: "Justin Timberlake", username: "JustinTimberlake", password: "password", email: "JustinTimberlake@pearljam.com", image: "https://pbs.twimg.com/profile_images/1046895903095820289/9iU-AMuM_400x400.jpg" )
+puts "Created #{Artist.all.last.name}"
+
+Artist.create(name: "Elton John", username: "EltonJohn", password: "password", email: "EltonJohn@pearljam.com", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Elton_John_in_Norway_4.jpg/220px-Elton_John_in_Norway_4.jpg" )
+puts "Created #{Artist.all.last.name}"
+
+Artist.create(name: "Nicki Minaj", username: "NickiMinaj", password: "password", email: "NickiMinaj@pearljam.com", image: "https://pbs.twimg.com/profile_images/983786584322527232/-JbOHV7W_400x400.jpg" )
+puts "Created #{Artist.all.last.name}"
+
+Artist.create(name: "The Neighborhood", username: "TheNeighborhood", password: "password", email: "TheNeighborhood@pearljam.com", image: "https://ichef.bbci.co.uk/images/ic/960x540/p01v1hrg.jpg" )
+puts "Created #{Artist.all.last.name}"
+
+Artist.create(name: "Lily Allen", username: "LilyAllen", password: "password", email: "LilyAllen@pearljam.com", image: "https://images-na.ssl-images-amazon.com/images/I/B1-0x6XdatS._SL1000_.png" )
+puts "Created #{Artist.all.last.name}"

@@ -4,6 +4,8 @@
 <h2> <%= flash[:new_error] %></h2><br>
 <% end %>
 
+<img src= "<%= @artist.image %>" alt=""> <br>
+
 <b> <%= @artist.name %> is performing at: </b>
 <ul>
 <% @artist.events.each do |e| %>

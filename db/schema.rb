@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_141558) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_141558) do
     t.string "password_digest"
     t.string "email"
     t.string "city"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
