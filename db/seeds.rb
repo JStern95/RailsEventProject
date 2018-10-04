@@ -85,19 +85,19 @@ puts "Created #{Artist.all.last.name}"
 Event.create(city: "New York City", venue_id: 3, show_date: "2018/10/04", show_time: "20:00", artist_id: 5)
 puts "Created #{Event.all.last.venue_id}"
 
-Event.create(city: "New York City", venue_id: "Barclays Center", show_date: "2018/10/09", show_time: "19:00", artist_id: 3)
+Event.create(city: "New York City", venue_id: 5, show_date: "2018/10/09", show_time: "19:00", artist_id: 3)
 puts "Created #{Event.all.last.venue_id}"
 
-Event.create(city: "New York City", venue_id: "Barclays Center", show_date: "2018/10/04", show_time: "20:00", artist_id: 2)
+Event.create(city: "New York City", venue_id: 5, show_date: "2018/10/04", show_time: "20:00", artist_id: 2)
 puts "Created #{Event.all.last.venue_id}"
 
-Event.create(city: "New York City", venue_id: "Barclays Center", show_date: "2018/10/05", show_time: "20:00", artist_id: 2)
+Event.create(city: "New York City", venue_id: 5, show_date: "2018/10/05", show_time: "20:00", artist_id: 2)
 puts "Created #{Event.all.last.venue_id}"
 
 Event.create(city: "New York City", venue_id: 4, show_date: "2018/10/05", show_time: "20:00", artist_id: 9)
 puts "Created #{Event.all.last.venue_id}"
 
-Event.create(city: "New York City", venue_id: "Barclays Center", show_date: "2018/10/11", show_time: "19:30", artist_id: 8)
+Event.create(city: "New York City", venue_id: 5, show_date: "2018/10/11", show_time: "19:30", artist_id: 8)
 puts "Created #{Event.all.last.venue_id}"
 
 Event.create(city: "New York City", venue_id: 1, show_date: "2018/10/14", show_time: "19:30", artist_id: 4)
