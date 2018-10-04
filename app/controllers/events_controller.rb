@@ -4,7 +4,6 @@ class EventsController < ApplicationController
   skip_before_action :authorized, only: [:index, :show]
 
   def index
-    upcoming_events
     if params[:place]
       #@events = Event.all.select{|e| e.city.downcase == "#{params[:place].downcase}" || e.venue.downcase == "#{params[:place].downcase}" }
       @events = upcoming_events.select{|e| e.city.downcase.include?("#{params[:place].downcase}") || e.venue.downcase.include?("#{params[:place].downcase}") }

@@ -22,10 +22,10 @@ class ApplicationController < ActionController::Base
   end
 
   def past_events
-    @past_events = Event.all.select{|e| e.date_display < Date.today.to_s}
+    Event.all.select{|e| e.show_date < Date.today}
   end
 
   def upcoming_events
-    @upcoming_events = Event.all.select{|e| e.date_display > Date.today.to_s}
+    Event.all.select{|e| e.show_date > Date.today}
   end
 end

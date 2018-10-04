@@ -23,7 +23,7 @@ puts "Created #{Artist.all.last.name}"
 Artist.create(name: "Bruno Mars", username: "BrunoMars", password: "password", email: "BrunoMars@pearljam.com", image: "https://i.scdn.co/image/aa32d6d4ca2467974403518dd3ebfe8831c5ced1" )
 puts "Created #{Artist.all.last.name}"
 
-Event.create(city: "New York City", venue: "Madison Square Garden", show_date: "2018/10/20", show_time: "21:00", artist_id: 2)
+Event.create(city: "New York City", venue: "Madison Square Garden", show_date: "2018/09/20", show_time: "21:00", artist_id: 2)
 puts "Created #{Event.all.last.venue}"
 
 Artist.create(name: "Florence and the Machine", username: "FlorenceMachine", password: "password", email: "FlorenceMachine@pearljam.com", image: "https://images-na.ssl-images-amazon.com/images/I/C17HLImbaES._SL1000_.png" )
