@@ -7,6 +7,7 @@ class Event < ApplicationRecord
   validates_time :show_time
   validates :show_date, timeliness: {on_or_after: Date.today,
     message: "Events can't happen in the past!"}
+  validates_inclusion_of :city, :in => ["New York City", "Boston", "Philadelphia"]
 
   def date_display
     date_array=self.show_date.to_s.split("-")

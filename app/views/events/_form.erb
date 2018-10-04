@@ -13,7 +13,7 @@
 <%= form_for @event do |f|%>
 
   <%= f.label :city %><br>
-  <%= f.text_field :city %><br>
+  <%= f.select :city, @cities %><br>
 
   <%= f.label :venue %><br>
   <%= f.text_field :venue%><br>

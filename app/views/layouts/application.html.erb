@@ -6,26 +6,33 @@
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:800" rel="stylesheet">
     <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:800" rel="stylesheet">
+
   </head>
 
   <body>
     <div class="ui inverted segment">
       <div class="ui inverted secondary menu">
-          <%= link_to "View All Events", events_path, class: :item %>
-          <%= link_to "View All Artists", artists_path, class: :item %>
+          <%= link_to "View All Events", events_path, class: :item, style: "padding-top:11px;" %>
+          <%= link_to "View All Artists", artists_path, class: :item, style: "padding-top:11px;" %>
+          <div class="topnav-right">
     <% if !!current_user && current_user.class == Artist %>
       <%= link_to "Create Event", new_event_path, class: :item %>
       <% end %>
     <% if !!current_user %>
-        <%= link_to "Home", current_user, class: :item%>
+        <%= link_to current_user.username, current_user, class: :item%>
+        <% if current_user.class== User %>
+        <%= link_to "Edit Profile", edit_user_path(current_user), class: :item%>
+        <% elsif current_user.class == Artist %>
+        <%= link_to "Edit Profile", edit_artist_path(current_user), class: :item%>
+            <% end %>
         <%= link_to "Logout", logout_path, class: :item, method: :delete, data: {confirm: "Are you sure you want to logout?"}  %>
-
        <% else %>
         <%=link_to "Login", login_path, class: :item  %>
        <% end %>
+       </div>
     </div>
   </div>
     <%= yield %>

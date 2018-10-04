@@ -27,6 +27,7 @@ button {
 h1{
   text-align: center;
   font-family: 'Work Sans', sans-serif;
+  font-size: 300%;
 }
 
 body{
@@ -36,12 +37,12 @@ body::after {
   content: "";
   background-image: url(https://i.imgur.com/O8AzbvC.jpg);
   background-size: cover;
-  opacity: 0.25;
+  opacity: 0.35;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: -1;
 }
 
@@ -71,3 +72,82 @@ img {
   max-width: 250px;
   max-height: 200px;
 }
+
+.topnav-right {
+  float: right;
+}
+
+.h1-show{
+  color:black;
+  font-size:600%;
+  text-shadow: 5px 5px rgba(223, 216, 146, 1);
+  text-align: left;
+}
+
+.img-show{
+  min-width: 400px;
+  min-height: 400px;
+  align-items: center;
+}
+
+.event-show{
+
+  float: right;
+}
+
+/* Start of Artist Index */
+.all-artists {
+  padding: 20px;
+  margin: 20px;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+
+.clickable-container {
+  margin: 20px;
+  position:relative;
+  color:white;
+  width:220px;
+  display:block;
+}
+
+.clickable-container:hover {
+  cursor:pointer;
+  color:#fff490;
+}
+
+.overlay{
+  display:none;
+  text-align: center;
+}
+
+.clickable-container:hover .overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  background: #1d1f21;
+  border-radius: 5px;
+  width:100%;
+  height:100%;
+  opacity:0.85;
+}
+
+.artist-image > img {
+  padding:5px;
+  background:#1d1f21;
+  border-radius: 5px;
+  display:block;
+  width:220px;
+  height:220px;
+}
+
+.overlay-content {
+  font-size: 2rem;
+}
+/* End of Artist Index */

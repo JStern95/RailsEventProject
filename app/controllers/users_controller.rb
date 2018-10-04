@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    cities
     if !!current_user && current_user.class == User
       flash[:new_error] = "You're already logged in!"
       redirect_to user_path(current_user.id)
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    cities
     @user = User.create(user_params)
     if @user.valid?
       session[:user_id] = @user.id
@@ -34,6 +36,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    cities
     if !!current_user && current_user.class == User
       render :edit
     elsif !!current_user && current_user.class == Artist
@@ -43,6 +46,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    cities
     @user.update(user_params)
     if @user.valid?
       redirect_to @user

@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
     flash[:notice] = "You must be logged in to view that"
     redirect_to login_path unless logged_in?
   end
+
+  private
+
+  def cities
+    @cities = [["New York City"], ["Boston"], ["Philadelphia"]]
+  end
 end

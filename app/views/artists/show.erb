@@ -1,14 +1,16 @@
-<h1> <%= @artist.name %> </h1>
+<h1 class="h1-show"> <%= @artist.name %> </h1>
 
 <% if flash[:new_error] %>
 <h2> <%= flash[:new_error] %></h2><br>
 <% end %>
 
-<img src= "<%= @artist.image %>" alt=""> <br>
+<img src= "<%= @artist.image %>" class="img-show" alt=""> <br>
 
-<b> <%= @artist.name %> is performing at: </b>
-<ul>
-<% @artist.events.each do |e| %>
-<li> <%= link_to  e.venue + " on " + e.date_display, e %> </li>
-<% end %>
-</ul>
+<div class="event-show">
+  <b> <%= @artist.name %> is performing at: </b>
+  <ul>
+  <% @artist.events.each do |e| %>
+  <li> <%= link_to  e.venue + " on " + e.date_display, e %> </li>
+  <% end %>
+  </ul>
+</div>

@@ -17,6 +17,7 @@ class EventsController < ApplicationController
   end
 
   def new
+    cities
     if !!current_user && current_user.class == User
       flash[:new_error] = "You do not have access to that area"
       redirect_to user_path(current_user.id)
@@ -26,6 +27,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    cities
     @event = Event.new(event_params)
     @event.artist_id = current_user.id
     @event.save
@@ -38,6 +40,7 @@ class EventsController < ApplicationController
   end
 
   def edit
+    cities
     if !!current_user && current_user.class == User
       flash[:new_error] = "You do not have access to that area"
       redirect_to user_path(current_user.id)
@@ -45,6 +48,7 @@ class EventsController < ApplicationController
   end
 
   def update
+    cities
     @event.update(event_params)
     if @event.valid?
       redirect_to @event

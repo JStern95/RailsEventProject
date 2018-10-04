@@ -1,12 +1,20 @@
-<h1>View all Artists</h1>
-<div class="ui action input">
+<h1>All Artists</h1>
+
+<center><div class="ui action input">
 <%= form_tag(artists_path, method: :get) do %>
   <%= text_field_tag :artist, params[:artist], placeholder:"Artist Name" %>
   <%= submit_tag "Search", name: nil %>
 <% end %>
-</div>
-<ul>
+</div></center>
+
+
+<ul class="all-artists">
   <% @artists.each do |a| %>
-  <li> <%= link_to a.name, a%></li>
+  <a class="clickable-container" href=<%= artist_path(a) %>>
+    <div class="artist-image"><img src=<%= a.image %>></div>
+      <div class="overlay">
+        <div class="overlay-content"> <%= a.name %></div>
+      </div>
+  </a>
   <% end %>
 </ul>
