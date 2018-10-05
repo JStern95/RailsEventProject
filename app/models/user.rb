@@ -15,4 +15,6 @@ class User < ApplicationRecord
   validates :city, presence: true
   validates_inclusion_of :city, :in => ["New York City", "Boston", "Philadelphia"]
 
+  validates :password, presence: true
+
 end

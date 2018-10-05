@@ -17,8 +17,8 @@
 
     <p class="tic-to-see"> <%= @user.username %> has tickets to see: </b> </p>
       <ol>
-      <% @user.tickets.all.select {|t| t.event.show_date > Date.today}.each do |e| %>
-      <a class="event-container" href=<%= event_path(e) %>>
+      <% @user.tickets.all.select {|t| t.event.show_date >= Date.today}.sort_by{|d| d.event.show_date }.each do |e| %>
+      <a class="event-container" href=<%= event_path(e.event) %>>
 
       <li class="user-show-events"> <%= e.event.artist.name  + " at " +  e.event.venue.name %> on <%= e.event.date_display %></li>
       <% end %>
@@ -30,14 +30,14 @@
     <br>
 
     <p class="tic-to-see"> <%= @user.username %> has seen: </b> </p>
-      <ol>
-      <% @user.tickets.all.select {|t| t.event.show_date < Date.today}.each do |e| %>
-      <a class="event-container" href=<%= event_path(e) %>
+    <ol>
+    <% @user.tickets.all.select {|t| t.event.show_date < Date.today}.sort_by{|d| d.event.show_date }.each do |e| %>
+    <a class="event-container" href=<%= event_path(e.event) %>>
 
-      <li class="user-show-events"> <%= e.event.artist.name  + " at " +  e.event.venue.name %> on <%= e.event.date_display %></li>
-      <% end %>
-    </ol>
-
+    <li class="user-show-events"> <%= e.event.artist.name  + " at " +  e.event.venue.name %> on <%= e.event.date_display %></li>
+    <% end %>
+  </ol>
+    </a>
 
 
   </div>

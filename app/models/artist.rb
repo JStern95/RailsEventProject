@@ -10,4 +10,6 @@ class Artist < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates_with EmailAddress::ActiveRecordValidator, field: :email
+
+  validates :password, presence: true
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :events
   resources :artists, only: [:index, :show, :edit, :update]
-  resources :users, except: [:index, :destroy]
+  resources :users, except: [:index]
   resources :tickets, only: [:new, :create, :destroy]
 
   get '/login', to: 'sessions#new', as: 'login'

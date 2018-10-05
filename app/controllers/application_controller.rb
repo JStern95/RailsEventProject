@@ -26,6 +26,6 @@ class ApplicationController < ActionController::Base
   end
 
   def upcoming_events
-    Event.all.select{|e| e.show_date > Date.today}
+    Event.all.select{|e| e.show_date >= Date.today}
   end
 end

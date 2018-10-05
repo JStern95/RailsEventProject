@@ -3,7 +3,6 @@ class Event < ApplicationRecord
   belongs_to :venue
   has_many :tickets
   has_many :users, through: :tickets
-  validates :venue, length: { minimum: 3 }
   validates_date :show_date
   validates_time :show_time
   validates :show_date, timeliness: {on_or_after: Date.today,

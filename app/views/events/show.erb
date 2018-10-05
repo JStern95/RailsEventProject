@@ -20,7 +20,7 @@
     <b>Show Date:</b> <%= @event.date_display %><br>
     <b>Show Time:</b> <%= @event.time_display %><br>
     <br>
-    <% if @event.show_date > Date.today %>
+    <% if @event.show_date >= Date.today %>
       <% if !!current_user && current_user.class == User %>
         <% if current_user.tickets.find_by(event_id: @event.id) %>
           Can't make it anymore?
@@ -44,7 +44,7 @@
     <div class="show-page-box">
       <h2>Fans attending this concert:</h2>
       <% @event.tickets.all.map {|t| t.user}.each do |u| %>
-      <p style="padding-left: 20px; margin-top: 0px; font-size: 100%;">  <%= link_to u.username, u %></p>
+      <p style="padding-left: 20px; margin-top: 0px; font-size: 100%;margin-bottom: 0px;">  <%= link_to u.username, u %></p>
       <% end %>
     </div>
   </div>

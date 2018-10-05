@@ -18,7 +18,7 @@ class ArtistsController < ApplicationController
   end
 
   def update
-    @artist.update(user_params)
+    @artist.update(artist_params)
     if @artist.valid?
       redirect_to @artist
     else

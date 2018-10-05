@@ -33,13 +33,13 @@ puts "Created #{Venue.all.last.name}"
 Venue.create(name: "Barclays Center", image: "https://www.rateyourseats.com/shared/1463623674_59798825.jpg" )
 puts "Created #{Venue.all.last.name}"
 
-Venue.create(name: "Wells Fargo Center", image: "https://pbs.twimg.com/profile_images/1007471233582022656/_PCnUad5_400x400.jpg" )
+Venue.create(name: "Wells Fargo Center", image: "https://i.imgur.com/sH2WawB.jpg" )
 puts "Created #{Venue.all.last.name}"
 
-Venue.create(name: "Union Transfer", image: "https://pbs.twimg.com/profile_images/1007471233582022656/_PCnUad5_400x400.jpg" )
+Venue.create(name: "Union Transfer", image: "https://i.imgur.com/xxhRU7r.jpg" )
 puts "Created #{Venue.all.last.name}"
 
-Venue.create(name: "TD Garden", image: "https://pbs.twimg.com/profile_images/1007471233582022656/_PCnUad5_400x400.jpg" )
+Venue.create(name: "TD Garden", image: "https://www.rateyourseats.com/shared/1468730061_86024224.jpg" )
 puts "Created #{Venue.all.last.name}"
 
 
@@ -79,16 +79,39 @@ puts "Created #{Artist.all.last.name}"
 
 
 
-# Event.create(city: "New York City", venue_id: 2, show_date: "2018/10/03", show_time: "20:00", artist_id: 1)
-# puts "Created #{Event.all.last.venue_id}"
+Event.create(city: "New York City", venue_id: 2, show_date: "2018/10/03", show_time: "20:00", artist_id: 1)
+puts "Created #{Event.all.last.venue_id}"
 
 Event.create(city: "New York City", venue_id: 3, show_date: "2018/10/04", show_time: "20:00", artist_id: 5)
 puts "Created #{Event.all.last.venue_id}"
 
-Event.create(city: "New York City", venue_id: 5, show_date: "2018/10/09", show_time: "19:00", artist_id: 3)
+Event.create(city: "New York City", venue_id: 5, show_date: "2018/10/04", show_time: "20:00", artist_id: 2)
 puts "Created #{Event.all.last.venue_id}"
 
-Event.create(city: "New York City", venue_id: 5, show_date: "2018/10/04", show_time: "20:00", artist_id: 2)
+Event.create(city: "Boston", venue_id: 8, show_date: "2018/09/27", show_time: "20:00", artist_id: 2)
+puts "Created #{Event.all.last.venue_id}"
+
+Event.create(city: "Boston", venue_id: 8, show_date: "2018/09/28", show_time: "20:00", artist_id: 2)
+puts "Created #{Event.all.last.venue_id}"
+
+Event.create(city: "Philadelphia", venue_id: 6, show_date: "2018/09/11", show_time: "21:00", artist_id: 7)
+puts "Created #{Event.all.last.venue_id}"
+
+Event.create(city: "Philadelphia", venue_id: 6, show_date: "2018/09/12", show_time: "21:00", artist_id: 7)
+puts "Created #{Event.all.last.venue_id}"
+
+
+User.create(first_name: "Max", last_name: "Gumsomthing", username:"Bubblegum", password: "flatiron", email: "Bubblegum@gmail.com", city: "New York City")
+
+Ticket.create(user_id: 1, event_id: 1)
+Ticket.create(user_id: 1, event_id: 2)
+Ticket.create(user_id: 1, event_id: 3)
+Ticket.create(user_id: 1, event_id: 4)
+Ticket.create(user_id: 1, event_id: 5)
+Ticket.create(user_id: 1, event_id: 6)
+Ticket.create(user_id: 1, event_id: 7)
+
+Event.create(city: "New York City", venue_id: 5, show_date: "2018/10/09", show_time: "19:00", artist_id: 3)
 puts "Created #{Event.all.last.venue_id}"
 
 Event.create(city: "New York City", venue_id: 5, show_date: "2018/10/05", show_time: "20:00", artist_id: 2)

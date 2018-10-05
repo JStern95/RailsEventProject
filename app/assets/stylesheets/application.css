@@ -37,7 +37,7 @@ body::after {
   content: "";
   background-image: url(https://i.imgur.com/O8AzbvC.jpg);
   background-size: cover;
-  opacity: 0.35;
+  opacity: 0.3;
   top: 0;
   left: 0;
   bottom: 0;
