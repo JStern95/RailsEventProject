@@ -250,12 +250,19 @@ cursor: pointer;
 
 .user-info {
   text-align: left;
+  font-size: 18px;
 
 }
 
 .user-shows {
   margin: 20px;
   text-align: center;
+}
+
+.user-shows p {
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .user-show-events {
@@ -285,21 +292,34 @@ cursor: pointer;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  width: auto;
 }
 
 .second-row-container {
   margin-top: 50px;
+  background-color: rgba(0,0,0,.2);
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  background-color: rgba(0,0,0,.2)
+  width: auto;
+}
+
+.third-row-container {
+  margin-top: 50px;
+  background-color: rgba(0,0,0,.2);
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: auto;
 }
 
 .show-page-box {
   min-width: 350px;
   min-height: 350px;
   border-radius: 50px;
+  font-size: 150%;
 }
 
 .show-page-box img {

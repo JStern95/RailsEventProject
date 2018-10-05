@@ -1,3 +1,8 @@
 <h1>Edit Event </h1>
 
 <%= render "form" %>
+<div class="form-container">
+  <div class="form">
+    <%= button_to "Delete Event", @event, method: :delete, data: {confirm: "Are you sure"} %>
+  </div>
+</div>
