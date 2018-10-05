@@ -39,11 +39,15 @@ class UsersController < ApplicationController
 
   def edit
     cities
-    if !!current_user && current_user.class == User
+    if current_user.class == User && current_user.id == @user.id
       render :edit
-    elsif !!current_user && current_user.class == Artist
+    elsif current_user.class == User
+      redirect_to user_path(current_user.id)
+    elsif current_user.class == Artist
       flash[:new_error] = "You do not have access to that area"
       redirect_to artist_path(current_user.id)
+    else
+      redirect_to login_path
     end
   end
 
@@ -71,7 +75,7 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :password, :email, :city )
+    params.require(:user).permit(:first_name, :last_name, :username, :password, :password_confirmation, :email, :city )
   end
 
 
